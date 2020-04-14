@@ -1,0 +1,183 @@
+.price .section_header h2 {
+    font-size: 22px;
+    margin: 0;
+    padding: 0 10px;
+}
+
+.section_single_page.price .single_page_box .section_header {
+    margin-bottom: 45px;
+}
+
+.accordion_tab {
+    margin-bottom: 20px;
+}
+
+
+
+
+.accordion_tab_arrow {
+    width: 30px;
+    height: 30px;
+    border: 2px solid $color-main;
+    position: relative;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.arrow-down {
+    width: 0;
+    height: 0;
+
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+
+    border-top: 10px solid $color-main;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0);
+    top: 37%;
+}
+
+.accordion_tab_arrow:hover {
+    & .arrow-down {
+        border-top: 10px solid white;
+
+    }
+
+    & {
+        background: $color-main;
+    }
+}
+
+.accordion_tab_title {
+    max-width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-transform: uppercase;
+    border: 1px solid #DDD;
+    padding: 10px 10px;
+
+    & h3 {
+        margin: 0;
+    }
+}
+
+.accordion_tab table {
+    display: none;
+
+}
+
+
+.price_descritpion {
+    margin-top: 60px;
+    padding-left: 5px;
+
+}
+
+
+td.column-2,
+th.column-2 {
+    width: 130px;
+}
+
+@media (max-width:1100px) {
+    .accordion_tab_title h3 {
+        font-size: 16px;
+    }
+
+    .accordion_tab_arrow {
+        width: 25px;
+        height: 25px;
+    }
+
+
+    .arrow-down {
+        border-left: 8px solid transparent;
+        border-right: 8px solid transparent;
+        border-top: 8px solid #333333;
+    }
+}
+
+
+@media (max-width:960px) {
+
+    td.column-2,
+    th.column-2 {
+        width: 120px;
+    }
+
+    .accordion_tab_title {
+        padding: 10px 8px;
+    }
+
+    .accordion_tab_title h3,
+    .accordion table {
+        font-size: 14px;
+    }
+
+
+}
+
+
+
+@media (max-width:768px) {
+
+
+    .section_single_page.price .section_header {
+        margin-bottom: 30px;
+    }
+
+    .section_single_page.price .banner_text.container {
+        margin-bottom: 55px;
+    }
+
+    td.column-2,
+    th.column-2 {
+        width: 130px;
+    }
+
+    .accordion_tab_title h3,
+    .accordion table {
+        font-size: 16px;
+    }
+
+
+}
+
+
+@media (max-width:525px) {
+
+
+    td.column-2,
+    th.column-2 {
+        width: 120px;
+    }
+
+    .accordion_tab_title h3,
+    .accordion table {
+        font-size: 14px;
+    }
+
+
+}
+
+@media (max-width:465px) {
+
+    td.column-2,
+    th.column-2 {
+        width: 110px;
+    }
+
+    .accordion_tab_title {
+        padding: 8px 4px;
+    }
+
+    .accordion_tab_title h3,
+    .accordion table {
+        font-size: 13px;
+    }
+
+
+
+}

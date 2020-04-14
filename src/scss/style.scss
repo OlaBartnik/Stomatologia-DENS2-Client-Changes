@@ -1,0 +1,26 @@
+@import "variables";
+@import "mixins";
+
+@import "partials/normalize";
+@import "partials/print";
+
+@import "partials/grid";
+@import "partials/layout";
+
+@import "components/class";
+@import "components/box";
+
+@import "components/page_header";
+@import "components/page_hero";
+@import "components/main_services";
+@import "components/main_aboutUs";
+@import "components/main_contact";
+@import "components/page_footer";
+@import "components/page_price";
+@import "components/sidebar";
+@import "components/services_single_page";
+@import "components/aboutUs_gallery";
+@import "components/single";
+@import "components/error_page";
+@import "components/job_offers";
+// paralax ! html smoth
