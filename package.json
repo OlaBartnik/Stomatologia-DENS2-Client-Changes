@@ -11,7 +11,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "jquery": "^3.4.1"
+    "jquery": "^3.4.1",
+    "minimist": "^1.2.5"
   },
   "browserslist": [
     "> 0.1%",
