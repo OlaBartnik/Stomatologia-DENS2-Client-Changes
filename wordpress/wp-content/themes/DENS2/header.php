@@ -52,7 +52,7 @@
                         <a href="<?php echo home_url(); ?>" class="page_logo">
                 <img src="<?php echo get_template_directory_uri(); ?>/images/logoDENS2.png" alt="Stomatologia DENS2"></a>
                         </h1>
-                        <a href="http://localhost/nfz/" class="NFZ_logo"><img src="<?php echo get_template_directory_uri(); ?>/images/nfz.png" alt="NFZ"></a>
+
                     </div>
 
 
@@ -63,6 +63,7 @@
                             <li><a href="http://localhost/#services">Usługi</a></li>
                             <li><a href="http://localhost/cennik/">Cennik</a></li>
                             <li><a href="http://localhost/#contact">Kontakt</a></li>
+                            <li class="NFZ_logo_container"><a href="http://localhost/nfz/" class="NFZ_logo"><img src="<?php echo get_template_directory_uri(); ?>/images/nfz.png" alt="NFZ"></a></li>
                         </ul>
                     </nav>
                     </div>

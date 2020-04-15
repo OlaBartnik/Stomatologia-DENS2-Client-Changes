@@ -49,7 +49,7 @@ const css = function () {
         .pipe(sourcemaps.init())
         .pipe(
             sass({
-                outputStyle: "expanded" //nested, expanded, compressed, compact, compressed
+                outputStyle: "compressed" //nested, expanded, compressed, compact, compressed
             }).on("error", showError)
         )
         .pipe(autoprefixer())
@@ -57,7 +57,7 @@ const css = function () {
             suffix: ".min",
             basename: "style"
         }))
-        // .pipe(csso())
+        .pipe(csso())
         .pipe(sourcemaps.write("."))
         .pipe(gulp.dest("wordpress/wp-content/themes/DENS2/css"))
         .pipe(browserSync.stream({
