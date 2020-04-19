@@ -44,15 +44,15 @@ get_header(); ?>
 
 
 
- <a class="group" rel="group1" href="<?php echo get_template_directory_uri(); ?>/images/gallery1.jpg"><img src="<?php echo get_template_directory_uri(); ?>/images/gallery1_small.jpg" alt=""/></a>
+ <a class="group" rel="group1" href="<?php echo get_template_directory_uri(); ?>/images/gallery1.jpg"><img src="<?php echo get_template_directory_uri(); ?>/images/gallery1_small.jpg" alt="Wejście do kliniki"/></a>
 
 
 
- <a class="group" rel="group1" href="<?php echo get_template_directory_uri(); ?>/images/gallery2.jpg"><img src="<?php echo get_template_directory_uri(); ?>/images/gallery2_small.jpg" alt=""/></a>
+ <a class="group" rel="group1" href="<?php echo get_template_directory_uri(); ?>/images/gallery2.jpg"><img src="<?php echo get_template_directory_uri(); ?>/images/gallery2_small.jpg" alt="Recepcja"/></a>
 
 
 
- <a class="group" rel="group1" href="<?php echo get_template_directory_uri(); ?>/images/gallery3.jpg"><img src="<?php echo get_template_directory_uri(); ?>/images/gallery3_small.jpg" alt=""/></a>
+ <a class="group" rel="group1" href="<?php echo get_template_directory_uri(); ?>/images/gallery3.jpg"><img src="<?php echo get_template_directory_uri(); ?>/images/gallery3_small.jpg" alt="Poczekalnia"/></a>
 
 
 
@@ -63,34 +63,55 @@ get_header(); ?>
 
 
 
- <a class="group" rel="group1" href="<?php echo get_template_directory_uri(); ?>/images/gallery4.jpg"><img src="<?php echo get_template_directory_uri(); ?>/images/gallery4_small.jpg" alt=""/></a>
+ <a class="group" rel="group1" href="<?php echo get_template_directory_uri(); ?>/images/gallery4.jpg"><img src="<?php echo get_template_directory_uri(); ?>/images/gallery4_small.jpg" alt="Lekarze"/></a>
 
 
 
- <a class="group" rel="group1" href="<?php echo get_template_directory_uri(); ?>/images/gallery5.jpg"><img src="<?php echo get_template_directory_uri(); ?>/images/gallery5_small.jpg" alt=""/></a>
+ <a class="group" rel="group1" href="<?php echo get_template_directory_uri(); ?>/images/gallery5.jpg"><img src="<?php echo get_template_directory_uri(); ?>/images/gallery5_small.jpg" alt="Aparat rentgenowski"/></a>
 
 
 
- <a class="group" rel="group1" href="<?php echo get_template_directory_uri(); ?>/images/gallery6.jpg"><img src="<?php echo get_template_directory_uri(); ?>/images/gallery6_small.jpg" alt=""/></a>
+ <a class="group" rel="group1" href="<?php echo get_template_directory_uri(); ?>/images/gallery6.jpg"><img src="<?php echo get_template_directory_uri(); ?>/images/gallery6_small.jpg" alt="Pantomogram"/></a>
 
 
 
  </div>
 
 
+
+ <div class="gallery">
+
+
+
+ <a class="group" rel="group1" href="<?php echo get_template_directory_uri(); ?>/images/gallery7.jpg"><img src="<?php echo get_template_directory_uri(); ?>/images/gallery7_small.jpg" alt="Unit stomatologiczny"/></a>
+
+
+
+ <a class="group" rel="group1" href="<?php echo get_template_directory_uri(); ?>/images/gallery8.jpg"><img src="<?php echo get_template_directory_uri(); ?>/images/gallery8_small.jpg" alt="Narzędzia stomatologiczne"/></a>
+
+
+
+ <a class="group" rel="group1" href="<?php echo get_template_directory_uri(); ?>/images/gallery9.jpg"><img src="<?php echo get_template_directory_uri(); ?>/images/gallery9_small.jpg" alt="Fotel dentystyczny"/></a>
+
+
+
+ </div>
+
+
+
  <div class="gallery last_row">
 
 
 
- <a class="group" rel="group1" href="<?php echo get_template_directory_uri(); ?>/images/gallery7.jpg"><img src="<?php echo get_template_directory_uri(); ?>/images/gallery7_small.jpg" alt=""/></a>
+ <a class="group" rel="group1" href="<?php echo get_template_directory_uri(); ?>/images/gallery10.jpg"><img src="<?php echo get_template_directory_uri(); ?>/images/gallery10_small.jpg" alt="Fotel dentystyczny"/></a>
 
 
 
- <a class="group" rel="group1" href="<?php echo get_template_directory_uri(); ?>/images/gallery8.jpg"><img src="<?php echo get_template_directory_uri(); ?>/images/gallery8_small.jpg" alt=""/></a>
+ <a class="group" rel="group1" href="<?php echo get_template_directory_uri(); ?>/images/gallery11.jpg"><img src="<?php echo get_template_directory_uri(); ?>/images/gallery11_small.jpg" alt="Fotel dentystyczny"/></a>
 
 
 
- <a class="group" rel="group1" href="<?php echo get_template_directory_uri(); ?>/images/gallery9.jpg"><img src="<?php echo get_template_directory_uri(); ?>/images/gallery9_small.jpg" alt=""/></a>
+ <a class="group" rel="group1" href="<?php echo get_template_directory_uri(); ?>/images/gallery12.jpg"><img src="<?php echo get_template_directory_uri(); ?>/images/gallery12_small.jpg" alt="Logo kliniki"/></a>
 
 
 

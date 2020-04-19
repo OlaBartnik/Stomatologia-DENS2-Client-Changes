@@ -3,17 +3,17 @@
 /**
  * Plugin Base Class
  *
- * Peter's Plugins Foundation 03
+ * Peter's Plugins Foundation 04
  *
- * @package    PPF03
+ * @package    PPF04
  * @author     Peter Raschendorfer
  * @license    GPL2+
  */
 
  
-if ( !class_exists( 'PPF03_Plugin' ) ) {
+if ( !class_exists( 'PPF04_Plugin' ) ) {
   
-  abstract class PPF03_Plugin extends PPF03_Class {
+  abstract class PPF04_Plugin extends PPF04_Class {
     
     /**
      * Instances
@@ -32,9 +32,10 @@ if ( !class_exists( 'PPF03_Plugin' ) ) {
      *
      * @since  PPF01
      * @var    string
-     * @access private
+     * @access protected 
+     * was private prior to PPF04
      */
-    private $plugin_name;
+    protected  $plugin_name;
     
     
     /**
@@ -42,9 +43,10 @@ if ( !class_exists( 'PPF03_Plugin' ) ) {
      *
      * @since  PPF01
      * @var    string
-     * @access private
+     * @access protected
+     * was private prior to PPF04
      */
-    private $plugin_shortname;
+    protected $plugin_shortname;
     
     
     /**
@@ -52,9 +54,10 @@ if ( !class_exists( 'PPF03_Plugin' ) ) {
      *
      * @since  PPF01
      * @var    string
-     * @access private
+     * @access protected
+     * was private prior to PPF04
      */
-    private $plugin_file;
+    protected $plugin_file;
     
     
     /**
@@ -62,9 +65,10 @@ if ( !class_exists( 'PPF03_Plugin' ) ) {
      *
      * @since  PPF01
      * @var    string
-     * @access private
+     * @access protected
+     * was private prior to PPF04
      */
-    private $plugin_dir;
+    protected $plugin_dir;
     
     
     /**
@@ -72,9 +76,10 @@ if ( !class_exists( 'PPF03_Plugin' ) ) {
      *
      * @since  PPF01
      * @var    string
-     * @access private
+     * @access protected
+     * was private prior to PPF04
      */
-    private $plugin_slug;
+    protected $plugin_slug;
     
     
     /**
@@ -82,9 +87,10 @@ if ( !class_exists( 'PPF03_Plugin' ) ) {
      *
      * @since  PPF01
      * @var    int
-     * @access private
+     * @access protected
+     * was private prior to PPF04
      */
-    private $plugin_version;
+    protected $plugin_version;
     
     
     /**
@@ -92,9 +98,10 @@ if ( !class_exists( 'PPF03_Plugin' ) ) {
      *
      * @since  PPF01
      * @var    string
-     * @access private
+     * @access protected
+     * was private prior to PPF04
      */
-    private $_data_key;
+    protected $_data_key;
     
     
     /**
@@ -102,9 +109,10 @@ if ( !class_exists( 'PPF03_Plugin' ) ) {
      *
      * @since  PPF01
      * @var    array
-     * @access private
+     * @access protected
+     * was private prior to PPF04
      */
-    private $_data;
+    protected $_data;
     
     
     /**
@@ -112,9 +120,10 @@ if ( !class_exists( 'PPF03_Plugin' ) ) {
      *
      * @since  PPF01
      * @var    object
-     * @access private
+     * @access protected
+     * was private prior to PPF04
      */
-    private $settings;
+    protected $settings;
     
 
     /**
@@ -174,17 +183,16 @@ if ( !class_exists( 'PPF03_Plugin' ) ) {
      * }
      * @return singleton
      */
-    final public static function getInstance( $settings )
-    {
-
+    final public static function getInstance( $settings ) {
+        
         $calledClass = get_called_class();
 
-        if ( !isset( $_instances[$calledClass] ) )
+        if ( !isset( self::$_instances[$calledClass] ) )
         {
-            $_instances[$calledClass] = new $calledClass( $settings );
+            self::$_instances[$calledClass] = new $calledClass( $settings );
         }
 
-        return $_instances[$calledClass];
+        return self::$_instances[$calledClass];
     }
     
     
@@ -402,9 +410,9 @@ if ( !class_exists( 'PPF03_Plugin' ) ) {
 	   * do plugin install or update
      *
      * @since  PPF01
-     * @access private
+     * @access protected (since PPF04, was private before)
      */
-    private function plugin_install_update() {
+    protected  function plugin_install_update() {
       
       $version = $this->data_get( 'current_version' );
       
@@ -475,7 +483,7 @@ if ( !class_exists( 'PPF03_Plugin' ) ) {
      */
     public function data_get( $key ) {
       
-      if ( array_key_exists( $key, $this->_data ) ) {
+      if ( is_array( $this->_data ) && array_key_exists( $key, $this->_data ) ) {
         
         return $this->_data[$key];
       

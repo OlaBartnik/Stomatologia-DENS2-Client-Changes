@@ -3,9 +3,9 @@
 /**
  * Plugin Foundation Loader
  *
- * Peter's Plugins Foundation 03
+ * Peter's Plugins Foundation 04
  *
- * @package    PPF03
+ * @package    PPF04
  * @author     Peter Raschendorfer
  * @license    GPL2+
  */
@@ -15,5 +15,7 @@ require_once ( __DIR__ . '/ppf-subclass.php' );
 require_once ( __DIR__ . '/ppf-plugin.php' );
 require_once ( __DIR__ . '/ppf-settings.php' );
 require_once ( __DIR__ . '/ppf-admin.php' );
+
+require_once ( __DIR__ . '/ppf-plugin-addon.php' );
 
 ?>

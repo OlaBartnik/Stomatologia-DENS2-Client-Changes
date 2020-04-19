@@ -3,26 +3,27 @@
 /**
  * Plugin Base Sub-Class
  *
- * Peter's Plugins Foundation 03
+ * Peter's Plugins Foundation 04
  *
- * @package    PPF03
+ * @package    PPF04
  * @author     Peter Raschendorfer
  * @license    GPL2+
  */
  
-if ( !class_exists( 'PPF03_SubClass' ) ) {
+if ( !class_exists( 'PPF04_SubClass' ) ) {
   
   
-  abstract class PPF03_SubClass extends PPF03_Class {
+  abstract class PPF04_SubClass extends PPF04_Class {
     
     /**
      * reference to core class
      *
      * @since  PPF01
      * @var    object
-     * @access private
+     * @access protected
+     * was private prior to PPF04
      */
-    private $_core;
+    protected $_core;
     
     
     /**
@@ -30,9 +31,10 @@ if ( !class_exists( 'PPF03_SubClass' ) ) {
      *
      * @since  PPF01
      * @var    object
-     * @access private
+     * @access protected
+     * was private prior to PPF04
      */
-    private $_settings;
+    protected $_settings;
     
     
     /**

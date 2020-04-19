@@ -17,7 +17,7 @@ if ( ! defined( 'WPINC' ) ) {
  */
 if ( !class_exists( 'PP_404Page_Deprecated' ) ) {
   
-  class PP_404Page_Deprecated extends PPF03_SubClass {  
+  class PP_404Page_Deprecated extends PPF04_SubClass {  
     
     /**
 	   * Do Init

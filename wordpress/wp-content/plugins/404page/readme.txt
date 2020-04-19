@@ -2,8 +2,8 @@
 Contributors: petersplugins
 Tags: page, 404, error, error page, 404 page, page not found, page not found error, 404 error page, missing, broken link, template, 404 link, seo, custom 404, custom 404 page, custom 404 error, custom 404 error page, customize 404, customize 404 page, customize 404 error page, classicpress
 Requires at least: 4.0
-Tested up to: 5.3
-Stable tag: 11.2.1
+Tested up to: 5.4
+Stable tag: 11.2.2
 Requires PHP: 5.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -170,6 +170,10 @@ The 404page plugin adds a CSS class `error404` to the `<body>` tag which can be 
 Please use the [Support Forum](https://wordpress.org/support/plugin/404page).
 
 == Changelog ==
+
+= 11.2.2 (2020-03-28) =
+* changes to the notification for hopefully better compatibility
+* Plugin Foundation swtiched to PPF04
 
 = 11.2.1 (2020-01-04) =
 * if W3 Total Cache is installed and caching is active URLs that result in an 404 error are automatically excluded from caching
@@ -343,6 +347,9 @@ Please use the [Support Forum](https://wordpress.org/support/plugin/404page).
 * Initial Release
 
 == Upgrade Notice ==
+
+= 11.2.2 =
+notification compatibility
 
 = 11.2.1 =
 if W3 Total Cache is installed and caching is active URLs that result in an 404 error are automatically excluded from caching

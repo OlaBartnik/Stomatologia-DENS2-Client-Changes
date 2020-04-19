@@ -20,9 +20,9 @@ if ( !class_exists( 'PPF04_Plugin_Addon' ) ) {
      *
      * @since  PPF04
      * @var    string
-     * @access private
+     * @access protected
      */
-    private $base_plugin_name;
+    protected $base_plugin_name;
     
     
     /**
@@ -30,9 +30,9 @@ if ( !class_exists( 'PPF04_Plugin_Addon' ) ) {
      *
      * @since  PPF04
      * @var    string
-     * @access private
+     * @access protected
      */
-    private $base_plugin_function;
+    protected $base_plugin_function;
     
     
     /**
@@ -40,20 +40,10 @@ if ( !class_exists( 'PPF04_Plugin_Addon' ) ) {
      *
      * @since  PPF04
      * @var    string
-     * @access private
+     * @access protected
      */
-    private $base_plugin_min_version;
-    
+    protected $base_plugin_min_version;
 
-    /**
-     * Settings Class ( if the plugin uses settings )
-     *
-     * @since  PPF01
-     * @var    object
-     * @access private
-     */
-    private $settings;
-    
 
     /**
      * Init the Class 
@@ -78,8 +68,6 @@ if ( !class_exists( 'PPF04_Plugin_Addon' ) ) {
       
       $this->_data_key = str_replace( '-', '_', $settings['slug'] ) . '_data';
       $this->data_load(); 
-      
-      $this->plugin_file      = $settings['file'];
       
       $this->addon_check();
       
@@ -144,13 +132,11 @@ if ( !class_exists( 'PPF04_Plugin_Addon' ) ) {
       
         $this->plugin_init();        
         
-        $base = $this->get_base_plugin_function();
-        
-        if ( ! function_exists( $base ) ) {
+        if ( ! $this->base_exists() ) {
           
           add_action('admin_notices', array( $this, 'admin_notice_base_plugin_not_found' ) );
           
-        } elseif ( version_compare( $this->get_base_plugin_min_version(), $base()->get_plugin_version(), '>' ) ) {
+        } elseif ( version_compare( $this->get_base_plugin_min_version(), $this->call_base()->get_plugin_version(), '>' ) ) {
           
           add_action('admin_notices', array( $this, 'admin_notice_base_plugin_version_insufficient' ) );
           
@@ -162,6 +148,46 @@ if ( !class_exists( 'PPF04_Plugin_Addon' ) ) {
         
       } );
       
+      
+    }
+    
+    
+    /**
+     * call base plugin 
+     *
+     * @since PPF04
+     */
+    public function call_base() {
+      
+      $base = $this->get_base_plugin_function();
+        
+      if ( function_exists( $base ) ) {
+        
+        return $base();
+        
+      }
+      
+      return false;
+      
+    }
+    
+    
+    /**
+     * check if base function exists 
+     *
+     * @since PPF04
+     */
+    public function base_exists() {
+      
+      $base = $this->get_base_plugin_function();
+        
+      if ( function_exists( $base ) ) {
+        
+        return true;
+        
+      }
+      
+      return false;
       
     }
     

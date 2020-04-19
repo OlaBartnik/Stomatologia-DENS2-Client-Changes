@@ -3,26 +3,27 @@
 /**
  * Settings Class
  *
- * Peter's Plugins Foundation 03
+ * Peter's Plugins Foundation 04
  *
- * @package    PPF03
+ * @package    PPF04
  * @author     Peter Raschendorfer
  * @license    GPL2+
  */
  
-if ( !class_exists( 'PPF03_Settings' ) ) {
+if ( !class_exists( 'PPF04_Settings' ) ) {
   
   
-  abstract class PPF03_Settings extends PPF03_SubClass {
+  abstract class PPF04_Settings extends PPF04_SubClass {
   
     /**
      * name of settings in databse (meta_key)
      *
      * @since  PPF01
      * @var    string
-     * @access private
+     * @access protected
+     * was private prior to PPF04
      */
-    private $_key;
+    protected $_key;
     
     
     /**
@@ -30,9 +31,10 @@ if ( !class_exists( 'PPF03_Settings' ) ) {
      *
      * @since  PPF01
      * @var    array
-     * @access private
+     * @access protected
+     * was private prior to PPF04
      */
-    private $_settings;
+    protected $_settings;
     
     
     /**
@@ -40,9 +42,10 @@ if ( !class_exists( 'PPF03_Settings' ) ) {
      *
      * @since  PPF01
      * @var    array
-     * @access private
+     * @access protected
+     * was private prior to PPF04
      */
-    private $_defaults;
+    protected $_defaults;
     
     
     /**
@@ -126,7 +129,16 @@ if ( !class_exists( 'PPF03_Settings' ) ) {
      */
     public function get( $key ) {
       
-      return $this->_settings[$key];
+      // as of PPF04 we check if the key exists
+      if ( array_key_exists( $key, $this->_settings ) ) {
+      
+        return $this->_settings[$key];
+        
+      } else {
+        
+        return null;
+        
+      }
       
     }
     

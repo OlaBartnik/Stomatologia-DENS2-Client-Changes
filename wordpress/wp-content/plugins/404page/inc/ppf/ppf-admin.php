@@ -3,27 +3,39 @@
 /**
  * Admin Class
  *
- * Peter's Plugins Foundation 03
+ * Peter's Plugins Foundation 04
  *
- * @package    PPF03
+ * @package    PPF04
  * @author     Peter Raschendorfer
  * @license    GPL2+
  */
  
-if ( !class_exists( 'PPF03_Admin' ) ) {
+if ( !class_exists( 'PPF04_Admin' ) ) {
   
   
-  abstract class PPF03_Admin extends PPF03_SubClass {
+  abstract class PPF04_Admin extends PPF04_SubClass {
     
     
     /**
      * settings sections
      *
      * @since  PPF01
-     * @var    string
+     * @var    array
+     * @access private
+     *
+     * as of PPF04 we initialize an empty array
+     */
+    private $_sections = array();
+    
+    
+    /**
+     * is setting registered?
+     *
+     * @since  PPF04
+     * @var    bool
      * @access private
      */
-    private $_sections;
+    private $_settings_registered = false;
     
     
     /**
@@ -46,7 +58,7 @@ if ( !class_exists( 'PPF03_Admin' ) ) {
      * @access private
      */
     private $_my_screen_id;
-
+    
   
     /**
      * add multiple setting sections
@@ -55,26 +67,72 @@ if ( !class_exists( 'PPF03_Admin' ) ) {
      * @param  array $sections array of setting sections to add
      * @access public
      * @see    add_settings()
+     *
+     * as of PPF04 we add the sections to the _sections array to allow adding more sections
      */
     public function add_setting_sections( $sections ) {
       
-      $this->_sections = $sections;
-      
       foreach( $sections as $section ) {
         
-        if ( array_key_exists( 'fields', $section ) ) {
-        
-          $this->add_settings( $section );
-          
-        }
+        // as of PPF04 we use add_setting_section()
+        $this->add_setting_section( $section );
+
         
       }
       
-      // Register the options
-      // since PPF03 only if there is a settings class
-      // so we can use the same function also if we don't need any settings
-      if ( false !== $this->settings() ) {
-        register_setting( $this->core()->get_plugin_slug(), $this->settings()->get_option_name(), array( 'sanitize_callback' => array( $this, 'sanitize_callback' ) ) );
+      // since PPF04
+      $this->maybe_register_setting();
+      
+    }
+    
+    
+    /**
+     * add a single setting section
+     *
+     * @since  PPF04
+     * @param  array $sections setting section to add
+     * @access public
+     * @see    add_settings()
+     */
+    public function add_setting_section( $section ) {
+     
+      // as of PPF04 add sections to _sections array one by one
+      $this->_sections[] = $section;
+        
+      if ( array_key_exists( 'fields', $section ) ) {
+        
+        $this->add_settings( $section );
+          
+      }
+      
+      $this->maybe_register_setting();
+      
+    }
+    
+    
+    /**
+     * register the setting
+     *
+     * @since  PPF04
+     * @access private
+     *
+     * was part of add_setting_sections() before PPF04
+     */
+    public function maybe_register_setting() {
+      
+      if ( ! $this->_settings_registered ) {
+      
+        // Register the options
+        // since PPF03 only if there is a settings class
+        // so we can use the same function also if we don't need any settings
+        if ( false !== $this->settings() ) {
+          
+          register_setting( $this->core()->get_plugin_slug(), $this->settings()->get_option_name(), array( 'sanitize_callback' => array( $this, 'sanitize_callback' ) ) );
+          
+        }
+        
+        $this->_settings_registered = true;
+        
       }
       
       
@@ -87,11 +145,14 @@ if ( !class_exists( 'PPF03_Admin' ) ) {
      * @since  PPF01
      * @param  array $settings array of settings to add
      *                         string $section  => ID of the section
+     *                         int    $order    => sort order
+     *                                             this was added in PPF04, so we check if it exists for backwards compatibility
      *                         string $title    => title for section (used by print_setting_sections())
      *                         string $html     => HTML code to add to this section
      *                         array  $fields   => multidimensional array of fields to add
      *                                             string $key      => key of the option array
      *                                             string $callback => function to call
+     *                                                                 as of PPF04 this can be an array to enable external callbacks
      *                         bool   $nosubmit => this section should not show the submit button
      * @access private
      */
@@ -105,7 +166,18 @@ if ( !class_exists( 'PPF03_Admin' ) ) {
   
         $field_id = $this->core()->get_plugin_slug() . '-' . $field['key'];
         
-        add_settings_field( $field_id, '' , array( $this, $field['callback'] ), $this->core()->get_plugin_slug(), $section_id );
+        // since PPF04
+        if ( is_array( $field['callback'] ) ) {
+          
+          $callback = $field['callback'];
+          
+        } else {
+        
+          $callback = array( $this, $field['callback'] );
+          
+        }
+        
+        add_settings_field( $field_id, '' , $callback, $this->core()->get_plugin_slug(), $section_id );
         
       }
       
@@ -375,6 +447,33 @@ if ( !class_exists( 'PPF03_Admin' ) ) {
         
       }
       
+      
+      // sort the sections
+      
+      // see add_settings()
+      $sort = false;
+      
+      foreach( $this->_sections as $section ) {
+        
+        if ( array_key_exists( 'order', $section ) ) {
+          
+          $sort = true;
+          break; 
+          
+        }
+      }
+      
+      if ( $sort ) {
+        
+        usort( $this->_sections, function( $a, $b ) {
+          return $a['order'] - $b['order'];
+          
+        } );
+        
+      }
+      
+      // end of sort
+      
       if ( get_current_screen()->parent_base != 'options-general' ) {
       
         // On Option Screens settings_errors() is called automatically
@@ -513,36 +612,52 @@ if ( !class_exists( 'PPF03_Admin' ) ) {
             </div>
           </div>
           <p class="wp-clearfix"><a id="<?php echo $prefix; ?>-review-later" class="<?php echo $prefix; ?>-review-action" href="javascript:void(0);"><?php echo $content['button_later']; ?></a> <a id="<?php echo $prefix; ?>-review-close" class="<?php echo $prefix; ?>-review-action" href="javascript:void(0);"><?php echo $content['button_close']; ?></a></p>
-          
-          <style type="text/css">
-            #<?php echo $prefix; ?>-review-step-like, #<?php echo $prefix; ?>-review-step-dislike {
+        </div>
+        <?php
+        
+      } );
+      
+      
+      // Since PPF04 we add CSS and JS to footer for compatibility reasons
+      
+      add_action( 'admin_print_footer_scripts', function() use( $content, $links, $prefix, $nonce ) {
+        
+        // show notice only on certain pages
+        // it's not possible to check this earlier, because we need the id of the current screen for that
+        if ( ! in_array( get_current_screen()->id, array( 'dashboard', 'themes', 'plugins', 'options-general' , $this->get_screen_id() ) ) ) {
+          return;
+        }
+        
+        echo '
+        <style type="text/css">
+            #' . $prefix . '-review-step-like, #' . $prefix . '-review-step-dislike {
               display: none;
             }
-            #<?php echo $prefix; ?>-review-later, #<?php echo $prefix; ?>-review-close, #<?php echo $prefix; ?>-review-later:before, #<?php echo $prefix; ?>-review-close:before {
+            #' . $prefix . 'review-later, #' . $prefix . '-review-close, #' . $prefix . '-review-later:before, #' . $prefix . '-review-close:before {
               display: block;
               height: 20px;
               line-height: 20px;
               text-decoration: none;
             }
-            #<?php echo $prefix; ?>-review-later, #<?php echo $prefix; ?>-review-close {
+            #' . $prefix . '-review-later, #' . $prefix . '-review-close {
               float: left;
               position: relative;
               padding-left: 22px;
             }
-            #<?php echo $prefix; ?>-review-later {
+            #' . $prefix . '-review-later {
               margin-right: 12px;
             } 
-            #<?php echo $prefix; ?>-review-later:before, #<?php echo $prefix; ?>-review-close:before {
+            #' . $prefix . '-review-later:before, #' . $prefix . '-review-close:before {
               font-family: dashicons;
               font-size: 20px;
               position: absolute;
               left: 0;
               top: 0;
             }
-            #<?php echo $prefix; ?>-review-later:before {
+            #' . $prefix . '-review-later:before {
               content: "\f508";
             }
-            #<?php echo $prefix; ?>-review-close:before {
+            #' . $prefix . '-review-close:before {
               content: "\f153";
             }
           </style>
@@ -550,36 +665,34 @@ if ( !class_exists( 'PPF03_Admin' ) ) {
           <script type="text/javascript">
             jQuery( function( $ ) {
               
-              $( "#<?php echo $prefix; ?>-review-happy" ).click( function() {
-                  $( "#<?php echo $prefix; ?>-review-step-1" ).fadeOut( 400, function() {
-                    $( "#<?php echo $prefix; ?>-review-step-like" ).fadeIn();
+              $( "#' . $prefix . '-review-happy" ).click( function() {
+                  $( "#' . $prefix . '-review-step-1" ).fadeOut( 400, function() {
+                    $( "#' . $prefix . '-review-step-like" ).fadeIn();
                   });
               } );
               
-              $( "#<?php echo $prefix; ?>-review-unhappy" ).click( function() {
-                  $( "#<?php echo $prefix; ?>-review-step-1" ).fadeOut( 400, function() {
-                    $( "#<?php echo $prefix; ?>-review-step-dislike" ).fadeIn();
+              $( "#' . $prefix . '-review-unhappy" ).click( function() {
+                  $( "#' . $prefix . '-review-step-1" ).fadeOut( 400, function() {
+                    $( "#' . $prefix . '-review-step-dislike" ).fadeIn();
                   });
               } );
               
-              $( ".<?php echo $prefix; ?>-review-action" ).click( function() {
+              $( ".' . $prefix . '-review-action" ).click( function() {
                 
                 $.post( 
                   ajaxurl, {
-                    action    : "<?php echo $prefix; ?>-review-action",
+                    action    : "' . $prefix . '-review-action",
                     command   : $(this).attr( "id" ),
-                    securekey : "<?php echo $nonce; ?>"
+                    securekey : "' . $nonce .'"
                   } 
                 );
-                $( "#<?php echo $prefix; ?>-review-notice" ).fadeOut();
+                $( "#' . $prefix . '-review-notice" ).fadeOut();
                 
               } );
 		
             } );
-          </script>
-          
-        </div>
-        <?php
+          </script>';
+        
         
       } );
       

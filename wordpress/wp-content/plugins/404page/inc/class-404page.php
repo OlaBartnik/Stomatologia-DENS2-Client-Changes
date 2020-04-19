@@ -23,7 +23,7 @@ if ( ! defined( 'PP_404' ) ) {
 if ( !class_exists( 'PP_404Page' ) ) {
   
   
-  class PP_404Page extends PPF03_Plugin {
+  class PP_404Page extends PPF04_Plugin {
     
     
     /**
@@ -1155,6 +1155,19 @@ if ( !class_exists( 'PP_404Page' ) ) {
      
       return ( true === $this->native );
      
+    }
+    
+    
+    /**
+	   * get settings class
+     *
+     * @since  11.3.0
+     * @access public
+     * @return object
+     */
+    public function admin() {
+      
+      return $this->admin;
     }
     
     

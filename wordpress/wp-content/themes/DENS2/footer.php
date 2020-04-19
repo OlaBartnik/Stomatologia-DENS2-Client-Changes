@@ -38,7 +38,7 @@
 
                     <div class="footer_contact footer_hours">
                     Godziny otwarcia: <br>
-                    pon. - piąt. 09:00 - 20:00
+                    pon. – piąt.: 09:00 – 20:00
                     </div>
 
             </div>
@@ -50,7 +50,7 @@
                     <a href="tel: 664 474 996">Tel. 664 474 996 </a>
 </div>
                 <div class="footer_contact footer_email">
-                <a href="mailto:aleksandra.dadacz@gmail.com" class="footer_contact footer_email">
+                <a href="mailto:ortodoncja.budel@gmail.com" class="footer_contact footer_email">
                     Email:<br>
                     ortodoncja.budel@gmail.com
                 </a>

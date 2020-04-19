@@ -197,7 +197,7 @@ get_header('home');
             </div>
 
 
-            <p class="address_hours"><strong>Godziny otwarcia:</strong><br>pon. - piąt.:  09:00 - 20:00
+            <p class="address_hours"><strong>Godziny otwarcia:</strong><br>pon. – piąt.:  09:00 – 20:00
         </p>
 
 
@@ -211,7 +211,7 @@ get_header('home');
 
 
             <div class="mail_box">
-                <a href="mailto:aleksandra.dadacz@gmail.com" class="mail_link" target ="_blank">
+                <a href="mailto:ortodoncja.budel@gmail.com" class="mail_link" target ="_blank">
              <img src="<?php echo get_template_directory_uri(); ?>/images/envelope.svg" alt="mail" class="contact_address mail">ortodoncja.budel@gmail.com</a>
               <!-- Icons made by <a href="https://www.flaticon.com/authors/smashicons" title="Smashicons">Smashicons</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a> -->
             </div>

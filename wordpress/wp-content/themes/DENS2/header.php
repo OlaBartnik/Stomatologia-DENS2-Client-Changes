@@ -27,7 +27,7 @@
                     <nav class="contact_nav">
                         <ul class="contact_nav_list">
                             <li>
-                                <img src="<?php echo get_template_directory_uri(); ?>/images/calendar.svg" alt="Godziny otwarcia"> pon. piąt. 09:00 - 20:00
+                                <img src="<?php echo get_template_directory_uri(); ?>/images/calendar.svg" alt="Godziny otwarcia">pon. – piąt.:  09:00 - 20:00
                                 <!-- Icons made by <a href="https://www.flaticon.com/authors/smashicons" title="Smashicons">Smashicons</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a> -->
                             </li>
 

@@ -15,7 +15,7 @@ if ( ! defined( 'WPINC' ) ) {
  */
 if ( !class_exists( 'PP_404Page_Admin' ) ) {
   
-  class PP_404Page_Admin extends PPF03_Admin {
+  class PP_404Page_Admin extends PPF04_Admin {
 
     
     /**
@@ -76,6 +76,7 @@ if ( !class_exists( 'PP_404Page_Admin' ) ) {
           array(
         
             'section' => 'general',
+            'order'   => 10,
             'title'   => esc_html__( 'General', '404page' ),
             'fields' => array(
               array(
@@ -89,6 +90,7 @@ if ( !class_exists( 'PP_404Page_Admin' ) ) {
           array(
         
             'section' => 'advanced',
+            'order'   => 20,
             'title'   => esc_html__( 'Advanced', '404page' ),
             'fields' => array(
               array(
@@ -123,6 +125,7 @@ if ( !class_exists( 'PP_404Page_Admin' ) ) {
           array(
         
             'section'  => 'videos',
+            'order'   => 100,
             'title'    => esc_html__( 'Explainer Videos', '404page' ),
             'html'     => $this->add_videos(),
             'nosubmit' => true
@@ -132,6 +135,8 @@ if ( !class_exists( 'PP_404Page_Admin' ) ) {
         )
         
       );
+      
+      do_action( '404page_addtional_setting_sections' );
       
     }
     
@@ -436,6 +441,8 @@ if ( !class_exists( 'PP_404Page_Admin' ) ) {
         wp_enqueue_style( '404pagelity', $this->core()->get_asset_url( 'css', 'lity.min.css' ) );
         wp_enqueue_style( '404pagecss', $this->core()->get_asset_url( 'css', '404page-ui.css' ) );
         
+        do_action( '404page_enqueue_css' );
+        
       }
       
     }
@@ -451,6 +458,8 @@ if ( !class_exists( 'PP_404Page_Admin' ) ) {
         
         wp_enqueue_script( '404page-ui', $this->core()->get_asset_url( 'js', '404page-ui.js' ), 'jquery', $this->core()->get_plugin_version(), true );
         wp_enqueue_script( '404page-lity', $this->core()->get_asset_url( 'js', 'lity.min.js' ), 'jquery', $this->core()->get_plugin_version(), true );
+        
+        do_action( '404page_enqueue_js' );
       
       }
       
