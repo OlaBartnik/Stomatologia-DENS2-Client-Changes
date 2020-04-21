@@ -35,7 +35,16 @@ get_header('home');
 
                     </div>
                 </div>
-
+   <div class="col-4-12">
+                    <div class="box">
+                        <a href="http://localhost/endodoncja" class="box_photo">
+                            <div class="box_photo_container">
+                                <img src="<?php echo get_template_directory_uri(); ?>/images/Endodoncja.jpg" alt="Endodoncja">
+                            </div>
+                            <h3 class=" box_tittle">Endodoncja</h3>
+                        </a>
+                    </div>
+                </div>
                 <div class="col-4-12">
                     <div class="box">
                         <a href="http://localhost/ortodoncja" class="box_photo">
@@ -47,7 +56,15 @@ get_header('home');
                     </div>
                 </div>
 
-                <div class="col-4-12">
+             
+
+
+            </div>
+
+
+            <div class="row">
+
+    <div class="col-4-12">
                     <div class="box">
                         <a href="http://localhost/chirurgia_implantologia" class="box_photo">
                             <div class="box_photo_container">
@@ -59,9 +76,6 @@ get_header('home');
                 </div>
 
 
-            </div>
-
-            <div class="row">
                 <div class="col-4-12">
                     <div class="box">
                         <a href="http://localhost/protetyka" class="box_photo">
@@ -80,6 +94,35 @@ get_header('home');
                                 <img src="<?php echo get_template_directory_uri(); ?>/images/RTG.jpg" alt="Zdjęcia RTG">
                             </div>
                             <h3 class="box_tittle">Zdjęcia RTG</h3>
+                        </a>
+                    </div>
+                </div>
+
+            
+
+
+            </div>
+
+
+            <div class="row">
+                <div class="col-4-12">
+                    <div class="box">
+                        <a href="http://localhost/profilaktyka" class="box_photo">
+                            <div class="box_photo_container">
+                                <img src="<?php echo get_template_directory_uri(); ?>/images/Profilaktyka.jpg" alt="Profilaktyka">
+                            </div>
+                            <h3 class="box_tittle">Profilaktyka</h3>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-4-12">
+                    <div class="box">
+                        <a href="http://localhost/wybielanie" class="box_photo">
+                            <div class="box_photo_container">
+                                <img src="<?php echo get_template_directory_uri(); ?>/images/Wybielanie.jpg" alt="Wybielanie">
+                            </div>
+                            <h3 class="box_tittle">Wybielanie</h3>
                         </a>
                     </div>
                 </div>

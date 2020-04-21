@@ -22,7 +22,7 @@
 
 
  <header class="page_header">
-            <div class="contact_menu">
+            <div class="contact_menu single_page">
                 <div class="container">
                     <nav class="contact_nav">
                         <ul class="contact_nav_list">
@@ -90,6 +90,9 @@
                             <a href="http://localhost/stomatologia-zachowacza" class="page_nav_sublist_link">Stomatologia zachowawcza</a>
                         </li>
                         <li class="page_nave_sublist_el">
+                            <a href="http://localhost/endodoncja" class="page_nav_sublist_link">Endodoncja</a>
+                        </li>
+                        <li class="page_nave_sublist_el">
                             <a href="http://localhost/ortodoncja" class="page_nav_sublist_link">Ortodoncja</a>
                         </li>
 
@@ -103,9 +106,16 @@
                             <a href="http://localhost/zdjecia_rtg" class="page_nav_sublist_link">Zdjęcia RTG</a>
                         </li>
                         <li class="page_nave_sublist_el">
+                            <a href="http://localhost/profilaktyka" class="page_nav_sublist_link">Profilaktyka</a>
+                        </li>
+                        <li class="page_nave_sublist_el">
+                            <a href="http://localhost/wybielanie" class="page_nav_sublist_link">Wybielanie</a>
+                        </li>
+                        <li class="page_nave_sublist_el">
                             <a href="http://localhost/nfz/" class="page_nav_sublist_link">NFZ</a>
                         </li>
                             </ul>
+
 
 
                             <li><a href="http://localhost/cennik/">Cennik</a></li>

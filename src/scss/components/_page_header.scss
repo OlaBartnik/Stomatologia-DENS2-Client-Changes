@@ -1,8 +1,10 @@
 .page_menu {
     padding-top: 5px;
-    background-color: rgba(#faf9f9, 0.8);
 
 }
+
+
+
 
 .page_header {
     display: flex;
@@ -61,7 +63,7 @@
 
 }
 
-.contact_menu {
+.contact_menu.single_page {
     border-bottom: 1px solid lighten($color-main, 40%);
 
 }
@@ -80,7 +82,7 @@
 
 .page_logo img {
     display: block;
-    max-width: 160px;
+    width: 230px;
     height: auto;
 }
 
@@ -115,7 +117,7 @@
     text-transform: uppercase;
     color: $color-main;
     font-size: 18px;
-    font-weight: 800;
+    font-weight: 600;
     display: block;
     outline: none;
     transition: 0.3s color;

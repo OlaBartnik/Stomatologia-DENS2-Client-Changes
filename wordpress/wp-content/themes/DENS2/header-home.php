@@ -74,6 +74,7 @@
 
         <div class="slider" style="background-image:url(<?php echo get_template_directory_uri(); ?>/images/slider.jpg)"></div>
         <div class="slider" style="background-image:url(<?php echo get_template_directory_uri(); ?>/images/slider2.jpg)"></div>
+        <div class="slider" style="background-image:url(<?php echo get_template_directory_uri(); ?>/images/slider3.jpg)"></div>
     </div>
 
 
@@ -108,6 +109,9 @@
                             <a href="http://localhost/stomatologia-zachowacza" class="page_nav_sublist_link">Stomatologia zachowawcza</a>
                         </li>
                         <li class="page_nave_sublist_el">
+                            <a href="http://localhost/endodoncja" class="page_nav_sublist_link">Endodoncja</a>
+                        </li>
+                        <li class="page_nave_sublist_el">
                             <a href="http://localhost/ortodoncja" class="page_nav_sublist_link">Ortodoncja</a>
                         </li>
 
@@ -119,6 +123,12 @@
                         </li>
                         <li class="page_nave_sublist_el">
                             <a href="http://localhost/zdjecia_rtg" class="page_nav_sublist_link">Zdjęcia RTG</a>
+                        </li>
+                        <li class="page_nave_sublist_el">
+                            <a href="http://localhost/profilaktyka" class="page_nav_sublist_link">Profilaktyka</a>
+                        </li>
+                        <li class="page_nave_sublist_el">
+                            <a href="http://localhost/wybielanie" class="page_nav_sublist_link">Wybielanie</a>
                         </li>
                         <li class="page_nave_sublist_el">
                             <a href="http://localhost/nfz/" class="page_nav_sublist_link">NFZ</a>

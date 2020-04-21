@@ -17,6 +17,14 @@
                           </a></li>
 
 
+                          
+                          <li><a href="http://localhost/endodoncja" class="sidebar_box">
+
+                            <img src="<?php echo get_template_directory_uri(); ?>/images/2Endodoncja.jpg" alt="Endodoncja">
+
+                            <h3 class="sidebar_tittle">Endodoncja</h3>
+                                </a></li>
+
                             <li><a href="http://localhost/ortodoncja" class="sidebar_box">
 
                                 <img src="<?php echo get_template_directory_uri(); ?>/images/2Ortodoncja.jpg" alt="Ortodoncja">
@@ -46,6 +54,21 @@
 
                             <h3 class="sidebar_tittle">Zdjęcia RTG</h3>
                             </a></li>
+
+
+                            <li><a href="http://localhost/profilaktyka" class="sidebar_box">
+
+                        <img src="<?php echo get_template_directory_uri(); ?>/images/2Profilaktyka.jpg" alt="Profilaktyka">
+
+                        <h3 class="sidebar_tittle">Profilaktyka</h3>
+                            </a></li>
+
+                            <li><a href="http://localhost/wybielanie" class="sidebar_box">
+
+                    <img src="<?php echo get_template_directory_uri(); ?>/images/2Wybielanie.jpg" alt="Wybielanie">
+
+                    <h3 class="sidebar_tittle">Wybielanie</h3>
+                        </a></li>
 
                         <li><a href="http://localhost/nfz" class="sidebar_box">
 
