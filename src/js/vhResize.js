@@ -19,8 +19,11 @@ function vhResize() {
     var hero = document.querySelector(".page_hero ");
 
 
+
     //po wejściu na stronę
-    hero.style.height = window.innerHeight + "px";
+    hero.style.height = window.innerHeight + 'px';
+
+
     //
 
 
@@ -28,12 +31,13 @@ function vhResize() {
 
     //i po zmianie rozmiarów okna
 
-    var windowWidth = window.innerWidth;
+    var windowWidth = window.innerWidth + 'px';;
 
     function resizeContent() {
 
         // console.log(`Rozmiar okna: ${window.innerWidth} x ${window.innerHeight}`)
-        hero.style.height = window.innerHeight + "px";
+        hero.style.height = window.innerHeight + 'px';
+
 
         if (window.innerWidth == windowWidth) {
 

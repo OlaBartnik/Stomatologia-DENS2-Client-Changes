@@ -1,5 +1,6 @@
 .page_menu {
     padding-top: 5px;
+    background-image: url('../images/blenda.png');
 
 }
 
@@ -251,6 +252,19 @@
 }
 
 
+@include bp(960px, 'max') {
+    .page_logo img {
+        max-width: 160px;
+    }
+
+    .page_menu {
+        background-image: url('../images/blenda2.png');
+
+    }
+
+
+}
+
 @include bp(850px, 'max') {
     .page_nav_list a {
         font-size: 17px;
@@ -261,9 +275,7 @@
         padding: 15px 5px;
     }
 
-    .page_logo img {
-        max-width: 150px;
-    }
+
 
     .contact_nav_list li {
         padding: 10px 10px;
@@ -289,6 +301,11 @@
 
     .page_logo img {
         max-width: 140px;
+    }
+
+    .page_menu {
+        background-image: url('../images/blenda3.png');
+
     }
 
     .toggle-main-nav {
@@ -372,8 +389,12 @@
         display: none;
     }
 
-    .contact_menu {
+    .contact_menu.single_page {
         border-bottom: none;
+    }
+
+    .contact_menu {
+        padding-top: 6px;
     }
 
     .toggle-main-nav {

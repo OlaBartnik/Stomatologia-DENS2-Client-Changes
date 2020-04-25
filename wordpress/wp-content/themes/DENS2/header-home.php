@@ -75,6 +75,7 @@
         <div class="slider" style="background-image:url(<?php echo get_template_directory_uri(); ?>/images/slider.jpg)"></div>
         <div class="slider" style="background-image:url(<?php echo get_template_directory_uri(); ?>/images/slider2.jpg)"></div>
         <div class="slider" style="background-image:url(<?php echo get_template_directory_uri(); ?>/images/slider3.jpg)"></div>
+        <div class="slider" style="background-image:url(<?php echo get_template_directory_uri(); ?>/images/slider4.jpg)"></div>
     </div>
 
 

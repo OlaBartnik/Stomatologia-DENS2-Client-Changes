@@ -15,11 +15,10 @@
 
 
 
-
 .slider {
     height: 100vh;
     background-size: cover;
-    background-position: top left 50%;
+    background-position: center;
 
 }
 
@@ -29,7 +28,7 @@
 .main_banner_addon {
     z-index: 10;
     position: absolute;
-    bottom: -1px;
+    bottom: -1.5px;
     left: 50%;
     transform: translate(-50%);
     height: 40px;

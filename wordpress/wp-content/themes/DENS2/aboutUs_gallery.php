@@ -97,9 +97,7 @@ get_header(); ?>
 
  </div>
 
-
-
- <div class="gallery last_row">
+ <div class="gallery">
 
 
 
@@ -112,6 +110,24 @@ get_header(); ?>
 
 
  <a class="group" rel="group1" href="<?php echo get_template_directory_uri(); ?>/images/gallery12.jpg"><img src="<?php echo get_template_directory_uri(); ?>/images/gallery12_small.jpg" alt="Logo kliniki"/></a>
+
+
+
+ </div>
+
+ <div class="gallery last_row">
+
+
+
+ <a class="group" rel="group1" href="<?php echo get_template_directory_uri(); ?>/images/gallery13.jpg"><img src="<?php echo get_template_directory_uri(); ?>/images/gallery13_small.jpg" alt="Fotel dentystyczny"/></a>
+
+
+
+ <a class="group" rel="group1" href="<?php echo get_template_directory_uri(); ?>/images/gallery14.jpg"><img src="<?php echo get_template_directory_uri(); ?>/images/gallery14_small.jpg" alt="Fotel dentystyczny"/></a>
+
+
+
+ <a class="group" rel="group1" href="<?php echo get_template_directory_uri(); ?>/images/gallery15.jpg"><img src="<?php echo get_template_directory_uri(); ?>/images/gallery15_small.jpg" alt="Logo kliniki"/></a>
 
 
 

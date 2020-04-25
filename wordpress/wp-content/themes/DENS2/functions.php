@@ -33,7 +33,7 @@ function noma_blank_header_scripts()
 		wp_register_script('fancybox', '//cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"', array(), '3.5.7', false);
 		wp_enqueue_script('fancybox');
 
-		wp_register_script('smoothScroll', 'https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll@15.0.0/dist/smooth-scroll.polyfills.min.js', array(), '15.0.0', false);
+		wp_register_script('smoothScroll', 'https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll@16.1.3/dist/smooth-scroll.polyfills.min.js', array(), '16.1.3', false);
 		wp_enqueue_script('smoothScroll');
 
 		wp_register_script('mapbox', 'https://api.mapbox.com/mapbox-gl-js/v1.8.1/mapbox-gl.js', array(), '1.8.1', false);
