@@ -14,7 +14,7 @@ function slider() {
         arrows: false,
         pauseOnFocus: false,
         pauseOnHover: false,
-        // adaptiveHeight: true
+
 
 
     });

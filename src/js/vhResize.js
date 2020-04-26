@@ -40,7 +40,6 @@ function vhResize() {
 
 
         if (window.innerWidth == windowWidth) {
-
             hero.style.transition = "height 1s";
         } else {
             hero.style.transition = "height 0s";

@@ -29,6 +29,7 @@
 
 .contact_menu {
     background-color: $color-background;
+    padding: 8px;
 
 }
 
@@ -185,7 +186,7 @@
     display: none;
     position: fixed;
     right: 10px;
-    top: 0px;
+    top: 10px;
     width: 60px;
     height: auto;
     background: none;

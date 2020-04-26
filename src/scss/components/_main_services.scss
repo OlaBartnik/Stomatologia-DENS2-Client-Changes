@@ -1,14 +1,13 @@
-#services {
-    padding-bottom: 50px;
+.p-main.home {
     background-color: white;
 }
 
-
-.section_sevices .header_container_main {
-
-    margin-bottom: 0px;
+#services {
+    margin-top: 2px;
 
 }
+
+
 
 
 @include bp(310px, 'max') {

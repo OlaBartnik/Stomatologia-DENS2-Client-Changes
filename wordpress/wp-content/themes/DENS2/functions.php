@@ -1,10 +1,4 @@
 <?php
-
-
-
-
-
-
 //-----------------------------------------------------------
 // Load noma_ Blank scripts (header.php)
 // //-----------------------------------------------------------
@@ -17,8 +11,6 @@ function noma_blank_header_scripts()
     if ( is_singular() AND comments_open() AND (get_option('thread_comments') == 1)) {
       wp_enqueue_script( 'comment-reply' );
 	}
-
-
 
 	if (is_front_page())  {
 
@@ -39,8 +31,6 @@ function noma_blank_header_scripts()
 		wp_register_script('mapbox', 'https://api.mapbox.com/mapbox-gl-js/v1.8.1/mapbox-gl.js', array(), '1.8.1', false);
 		wp_enqueue_script('mapbox');
 
-
-
 		wp_register_script('scripts', get_template_directory_uri() . '/js/scripts.js', array(), '1.0.0', true);
 		wp_enqueue_script('scripts');
 	}
@@ -51,8 +41,6 @@ function noma_blank_header_scripts()
 		wp_register_script('jquery', get_template_directory_uri() . '/js/vendor/jquery.min.js', array(), '3.4.1', false);
 		wp_enqueue_script('jquery');
 
-
-
 		wp_register_script('slick', '//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js', array(), '1.8.1', false);
 		wp_enqueue_script('slick');
 
@@ -62,12 +50,7 @@ function noma_blank_header_scripts()
 
 		wp_register_script('scripts', get_template_directory_uri() . '/js/scripts.js', array(), '1.0.0', true);
 		wp_enqueue_script('scripts');
-	}
-
-
-
-
-	else  {
+	} else  {
 
 		wp_deregister_script('jquery');
 		wp_register_script('jquery', get_template_directory_uri() . '/js/vendor/jquery.min.js', array(), '3.4.1', false);
@@ -77,9 +60,6 @@ function noma_blank_header_scripts()
 		wp_register_script('scripts', get_template_directory_uri() . '/js/scripts.js', array(), '1.0.0', true);
 		wp_enqueue_script('scripts');
 	}
-
-
-
 }
 
 
@@ -107,19 +87,14 @@ function add_defer_attribute($tag, $handle) {
 add_action('wp_enqueue_scripts', 'custome_styles');
 function custome_styles()
 {
-
-
 	wp_register_style('googleFonts', 'https://fonts.googleapis.com/css?family=Nunito+Sans:300,400,600,700,800,900&display=swap&subset=latin-ext', array(), '1.0', 'all');
 	wp_enqueue_style('googleFonts');
-
 
 	wp_register_style('slickStyle', '//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css', array(), '1.8.1', 'all');
 	wp_enqueue_style('slickStyle');
 
 	wp_register_style('fancyBoxStyle', '//cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css', array(), '3.5.7', 'all');
 	wp_enqueue_style('fancyBoxStyle');
-
-
 
 	wp_register_style('mapboxStyle', 'https://api.mapbox.com/mapbox-gl-js/v1.8.1/mapbox-gl.css', array(), '1.8.1', 'all');
 	wp_enqueue_style('mapboxStyle');

@@ -186,10 +186,8 @@ get_header('home');
 </section>
 
 
-<section class="section_contact">
-
-
-<div id="contact" class="container" >
+<section id="contact" class="section_contact">
+<div class="container" >
         <div class="row">
                 <div class="col-12-12 header_container_main">
             <header class="section_header">

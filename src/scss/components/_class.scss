@@ -7,8 +7,8 @@ nav {
 }
 
 section {
-    padding-top: 35px;
-    padding-bottom: 20px;
+    padding-top: 60px;
+    padding-bottom: 60px;
 }
 
 .section_single_page,
@@ -23,8 +23,14 @@ strong {
 
 
 
+#services .section_header,
+#aboutUs .section_header {
+    margin-bottom: 30px;
+}
 
-
+#contact .section_header {
+    margin-bottom: 15px;
+}
 
 // page.php
 .page-center.container {

@@ -80,7 +80,6 @@
 
 
 
-
         <div class="main_banner">
             <a href="#services">
                 <img src="<?php echo get_template_directory_uri(); ?>/images/addon.png" alt="" class="main_banner_addon">
@@ -143,7 +142,7 @@
 </nav>
 
 
-<main class="p-main" role="main">
+<main class="p-main home" role="main">
 
 
 

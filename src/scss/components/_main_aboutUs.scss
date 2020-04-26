@@ -1,6 +1,7 @@
 #aboutUs {
-    padding-bottom: 70px;
-    padding-top: 100px;
+    padding-bottom: 80px;
+    padding-top: 80px;
+    background-color: $color-background;
 
 }
 
@@ -14,10 +15,7 @@
 
 
 
-.section_aboutUs .header_container,
-.section_contact .header_container {
-    margin-bottom: 0px;
-}
+
 
 .section_aboutUS_photo {
     max-width: 100%;
@@ -55,9 +53,7 @@
 
     }
 
-    .section_aboutUs .header_container {
-        text-align: center;
-    }
+
 
     .aboutUs_button_container {
         padding-top: 15px;
