@@ -18,4 +18,4 @@ The final layout was changed a bit - client changes.
 * RWD
 
 
-![layout](screenshot.jpg)
+![layout](WebsiteScreenshot.jpg)
